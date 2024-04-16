@@ -2,7 +2,7 @@
 {
     public interface IRedisConnection : IDisposable
     {
-        void Open();
+        void Open(string url);
         void Close();
         IRedisDatabase GetDatabase();
 

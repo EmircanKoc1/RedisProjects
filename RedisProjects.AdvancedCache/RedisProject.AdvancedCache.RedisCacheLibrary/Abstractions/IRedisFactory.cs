@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions
 {
-    internal interface IRedisFactory
+    public interface IRedisFactory
     {
-        IRedisConnection CreateConnection();
-        IRedisOperations CreateOperation();
+        IRedisOperation CreateOperation(IRedisConnection connection);
 
     }
 }

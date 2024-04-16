@@ -1,4 +1,5 @@
 using StackExchange.Redis;
+using System.Data.SqlClient;
 
 namespace RedisProject.AdvancedCache.API
 {
@@ -7,12 +8,16 @@ namespace RedisProject.AdvancedCache.API
         public static void Main(string[] args)
         {
 
-            var m = ConnectionMultiplexer.Connect();
-            m.GetDatabase()
+            var m = ConnectionMultiplexer.Connect("localhost:6380");
+            var db = m.GetDatabase();
+            var key = new RedisKey("multikey");
+            var value = new RedisValue("aldlMLþMLmlþmdnka");
+            
+            
+       
 
 
-
-
+            
 
 
 

@@ -7,12 +7,12 @@ using RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions.Operations;
 
 namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions
 {
-    public interface IRedisOperations : 
-        IHashOperations,
-        IListOperations,
-        ISetOperations,
-        ISortedSetOperations,
-        IStringOperations
+    public interface IRedisOperation : 
+        IHashOperation,
+        IListOperation,
+        ISetOperation,
+        ISortedSetOperation,
+        IStringOperation
     {
 
     }

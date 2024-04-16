@@ -5,9 +5,10 @@ namespace RedisProject.AdvancedCache.RedisCacheLibrary.Concretes
 {
     public abstract class RedisConnection : IRedisConnection
     {
-        protected  ConnectionMultiplexer _multiplexer;
+        protected ConnectionMultiplexer _multiplexer;
         public RedisConnection(ConnectionMultiplexer multiplexer)
         => _multiplexer = multiplexer;
+
 
         public void Close()
         {
@@ -20,13 +21,11 @@ namespace RedisProject.AdvancedCache.RedisCacheLibrary.Concretes
         }
 
         public IRedisDatabase GetDatabase()
-        {
-            throw new NotImplementedException();
-        }
+        => new RedisDatabase(this._multiplexer);
 
-        public void Open()
+        public void Open(string url)
         {
-            _multiplexer = ConnectionMultiplexer.Connect("");
+            _multiplexer = ConnectionMultiplexer.Connect(url);
         }
 
     }

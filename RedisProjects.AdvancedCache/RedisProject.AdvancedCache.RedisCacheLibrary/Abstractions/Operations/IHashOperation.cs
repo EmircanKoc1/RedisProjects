@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions.Operations
 {
-    public interface IStringOperations
+    public interface IHashOperation
     {
     }
 }
