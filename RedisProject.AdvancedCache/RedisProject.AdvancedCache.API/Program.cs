@@ -1,4 +1,4 @@
-namespace RedisProject.AdvancedCache
+namespace RedisProject.AdvancedCache.API
 {
     public class Program
     {

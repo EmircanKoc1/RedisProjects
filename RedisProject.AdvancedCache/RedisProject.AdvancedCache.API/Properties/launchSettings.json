@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:6252",
-      "sslPort": 44350
+      "applicationUrl": "http://localhost:33708",
+      "sslPort": 44320
     }
   },
   "profiles": {
-    "RedisProject.AdvancedCache": {
+    "RedisProject.AdvancedCache.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7296;http://localhost:5024",
+      "applicationUrl": "https://localhost:7192;http://localhost:5001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
