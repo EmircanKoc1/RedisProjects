@@ -1,9 +1,21 @@
+using StackExchange.Redis;
+
 namespace RedisProject.AdvancedCache.API
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+
+            var m = ConnectionMultiplexer.Connect();
+            m.GetDatabase()
+
+
+
+
+
+
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
