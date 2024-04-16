@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions
 {
-    internal interface ISetOperations
+    internal interface IRedisDatabase
     {
+
     }
 }

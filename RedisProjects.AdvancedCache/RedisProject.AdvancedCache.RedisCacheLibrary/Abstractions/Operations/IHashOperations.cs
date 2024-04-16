@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions
+namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions.Operations
 {
-    internal interface IStringOperations
+    public interface IHashOperations
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions
+namespace RedisProject.AdvancedCache.RedisCacheLibrary.Abstractions.Operations
 {
-    internal interface ISortedSetOperations
+    public interface ISetOperations
     {
     }
 }
