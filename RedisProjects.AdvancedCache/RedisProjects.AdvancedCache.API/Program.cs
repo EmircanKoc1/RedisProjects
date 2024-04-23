@@ -1,26 +1,9 @@
-using StackExchange.Redis;
-using System.Data.SqlClient;
-
-namespace RedisProject.AdvancedCache.API
+namespace RedisProjects.AdvancedCache.API
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-
-            var m = ConnectionMultiplexer.Connect("localhost:6380");
-            var db = m.GetDatabase();
-            var key = new RedisKey("multikey");
-            var value = new RedisValue("aldlMLþMLmlþmdnka");
-            
-            
-       
-
-
-            
-
-
-
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.

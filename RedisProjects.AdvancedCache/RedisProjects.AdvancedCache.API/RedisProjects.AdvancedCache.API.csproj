@@ -10,9 +10,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="StackExchange.Redis" Version="2.7.33" />
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RedisProject.AdvancedCache.RedisCacheLibrary\RedisProject.AdvancedCache.RedisCacheLibrary.csproj" />
+  </ItemGroup>
 
 </Project>

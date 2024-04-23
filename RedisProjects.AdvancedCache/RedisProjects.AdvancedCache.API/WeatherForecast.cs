@@ -1,4 +1,4 @@
-namespace RedisProject.AdvancedCache.API
+namespace RedisProjects.AdvancedCache.API
 {
     public class WeatherForecast
     {

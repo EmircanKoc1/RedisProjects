@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RedisProjects.AdvancedCache
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisProject.AdvancedCache.RedisCacheLibrary", "RedisProjects.AdvancedCache\RedisProject.AdvancedCache.RedisCacheLibrary\RedisProject.AdvancedCache.RedisCacheLibrary.csproj", "{A239D0C9-1F3E-4301-92C8-3BFB058AE070}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisProject.AdvancedCache.API", "RedisProject.AdvancedCache\RedisProject.AdvancedCache.API\RedisProject.AdvancedCache.API.csproj", "{2EDD5EC2-6405-410F-9EB8-78277C4F21BB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RedisProjects.RedisService", "RedisProjects.RedisService", "{911D5840-1197-4C44-AB4E-B023CE9D94CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProjects.RedisService.CustomRedisService.API", "RedisProjects.RedisService\RedisProjects.RedisService.CustomRedisService.API\RedisProjects.RedisService.CustomRedisService.API.csproj", "{38070C60-63BE-4DE4-BE89-57DE008D484A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisProjects.RedisService.CustomRedisService.API", "RedisProjects.RedisService\RedisProjects.RedisService.CustomRedisService.API\RedisProjects.RedisService.CustomRedisService.API.csproj", "{38070C60-63BE-4DE4-BE89-57DE008D484A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProjects.RedisService.CustomRedisService.Lib", "RedisProjects.RedisService\RedisProjects.RedisService.CustomRedisService.Lib\RedisProjects.RedisService.CustomRedisService.Lib.csproj", "{91068FC1-BD4D-4299-ADD7-F8E6D89CE106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisProjects.RedisService.CustomRedisService.Lib", "RedisProjects.RedisService\RedisProjects.RedisService.CustomRedisService.Lib\RedisProjects.RedisService.CustomRedisService.Lib.csproj", "{91068FC1-BD4D-4299-ADD7-F8E6D89CE106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProjects.AdvancedCache.API", "RedisProjects.AdvancedCache\RedisProjects.AdvancedCache.API\RedisProjects.AdvancedCache.API.csproj", "{A8329251-C196-41C6-A7C5-A1EB0D54F617}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{A239D0C9-1F3E-4301-92C8-3BFB058AE070}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A239D0C9-1F3E-4301-92C8-3BFB058AE070}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A239D0C9-1F3E-4301-92C8-3BFB058AE070}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2EDD5EC2-6405-410F-9EB8-78277C4F21BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2EDD5EC2-6405-410F-9EB8-78277C4F21BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2EDD5EC2-6405-410F-9EB8-78277C4F21BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2EDD5EC2-6405-410F-9EB8-78277C4F21BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{38070C60-63BE-4DE4-BE89-57DE008D484A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{38070C60-63BE-4DE4-BE89-57DE008D484A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38070C60-63BE-4DE4-BE89-57DE008D484A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{91068FC1-BD4D-4299-ADD7-F8E6D89CE106}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91068FC1-BD4D-4299-ADD7-F8E6D89CE106}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91068FC1-BD4D-4299-ADD7-F8E6D89CE106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8329251-C196-41C6-A7C5-A1EB0D54F617}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8329251-C196-41C6-A7C5-A1EB0D54F617}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8329251-C196-41C6-A7C5-A1EB0D54F617}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8329251-C196-41C6-A7C5-A1EB0D54F617}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,9 +52,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{88394ED8-D5BE-4925-AB12-CDE39D4DEFB5} = {E2318A2F-9078-4BA2-A7D0-92F9443A8A45}
 		{A239D0C9-1F3E-4301-92C8-3BFB058AE070} = {1DF02607-313D-49A2-AE53-9584D207622B}
-		{2EDD5EC2-6405-410F-9EB8-78277C4F21BB} = {1DF02607-313D-49A2-AE53-9584D207622B}
 		{38070C60-63BE-4DE4-BE89-57DE008D484A} = {911D5840-1197-4C44-AB4E-B023CE9D94CD}
 		{91068FC1-BD4D-4299-ADD7-F8E6D89CE106} = {911D5840-1197-4C44-AB4E-B023CE9D94CD}
+		{A8329251-C196-41C6-A7C5-A1EB0D54F617} = {1DF02607-313D-49A2-AE53-9584D207622B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2BE9508-0C4E-4074-8D0D-4FA48AE652FA}

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace RedisProject.AdvancedCache.API.Controllers
+namespace RedisProjects.AdvancedCache.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
