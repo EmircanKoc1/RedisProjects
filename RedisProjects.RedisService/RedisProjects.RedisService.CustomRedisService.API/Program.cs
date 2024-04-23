@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Configuration;
-using RedisProjects.RedisService.CustomRedisService.Extensions;
+using RedisProjects.RedisService.CustomRedisService.Lib.Extensions;
 
 namespace RedisProjects.RedisService.CustomRedisService.API
 {

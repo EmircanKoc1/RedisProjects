@@ -146,6 +146,46 @@ public class RedisService : IRedisService
 
 
 
+    public bool AddItemToSortedSet(string key, string value, double score)
+    {
+        return _database.SortedSetAdd(key, value, score);
+
+    }
+    public bool IsKeyExistsFromSortedSet(string key, string value)
+    {
+        return _database.SetContains(key, value);
+    }
+    public bool RemoveItemFromSortedSet(string key, string value)
+    {
+        return _database.SortedSetRemove(key, value);
+    }
+    public long GetSortedSetMemberCount(string key)
+    {
+        return _database.SortedSetLength(key);
+    }
+    public IEnumerable<string> GetItemsFromSortedSet(string key)
+    {
+
+        var values = _database.SortedSetRandomMembers(
+            key: key,
+            count: GetSortedSetMemberCount(key));
+
+        return values
+                    .Where(x => !x.IsNullOrEmpty)
+                    .Select(x => x.ToString());
+    }
+
+    public IEnumerable<KeyValuePair<string,double>> GetItemsWithScoreFromSortedSet(string key)
+    {
+
+        var values = _database.SortedSetRandomMembersWithScores(
+            key: key,
+            count: GetSortedSetMemberCount(key));
+
+        return values.ToDictionary(x => x.Element.ToString(), x => x.Score);
+
+    }
+
     public bool AddItemToSet(string key, string value)
     {
         return _database.SetAdd(key, value);
@@ -164,34 +204,6 @@ public class RedisService : IRedisService
         return _database.SetLength(key);
     }
     public IEnumerable<string> GetItemsFromSet(string key)
-    {
-        var values = _database.SetMembers(key);
-
-        return values
-                    .Where(x => !x.IsNullOrEmpty)
-                    .Select(x => x.ToString());
-    }
-
-
-
-    public bool AddItemToSortedSet(string key, string value)
-    {
-        return _database.SetAdd(key, value);
-
-    }
-    public bool IsKeyExistsFromSortedSet(string key, string value)
-    {
-        return _database.SetContains(key, value);
-    }
-    public bool RemoveItemFromSortedSet(string key, string value)
-    {
-        return _database.SetRemove(key, value);
-    }
-    public long GetSetMemberSortedCount(string key)
-    {
-        return _database.SetLength(key);
-    }
-    public IEnumerable<string> GetItemsFromSortedSet(string key)
     {
         var values = _database.SetMembers(key);
 

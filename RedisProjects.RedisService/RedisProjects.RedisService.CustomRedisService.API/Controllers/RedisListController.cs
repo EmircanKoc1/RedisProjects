@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RedisProjects.RedisService.CustomRedisService.Services;
+using RedisProjects.RedisService.CustomRedisService.Lib.Abstractions;
+using RedisProjects.RedisService.CustomRedisService.Lib.Implementations;
 
 namespace RedisProjects.RedisService.CustomRedisService.Controllers
 {
