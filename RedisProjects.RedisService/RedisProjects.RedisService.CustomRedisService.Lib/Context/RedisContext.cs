@@ -1,15 +1,18 @@
 ﻿using StackExchange.Redis;
 
-namespace RedisProjects.RedisService.CustomRedisService.Context
+namespace RedisProjects.RedisService.CustomRedisService.Lib.Context
 {
     public class RedisContext
     {
 
-        private ConnectionMultiplexer _multiplexer;
-
+        protected ConnectionMultiplexer _multiplexer;
         public ConnectionMultiplexer ConnectionMultiplexer => _multiplexer;
+
         public RedisContext(string connectionString)
             => _multiplexer = ConnectionMultiplexer.Connect(connectionString);
+
+        public RedisContext(ConfigurationOptions options)
+            => _multiplexer = ConnectionMultiplexer.Connect(options);
 
         public RedisContext(ConnectionMultiplexer multiplexer)
             => _multiplexer = multiplexer;

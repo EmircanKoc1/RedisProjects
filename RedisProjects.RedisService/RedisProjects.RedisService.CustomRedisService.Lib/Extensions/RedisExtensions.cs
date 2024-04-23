@@ -1,30 +1,26 @@
 ﻿
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RedisProjects.RedisService.CustomRedisService.Context;
-using RedisProjects.RedisService.CustomRedisService.Services;
-using services = RedisProjects.RedisService.CustomRedisService.Services;
+using RedisProjects.RedisService.CustomRedisService.Lib.Context;
+using RedisProjects.RedisService.CustomRedisService.Lib.Abstractions;
+using services = RedisProjects.RedisService.CustomRedisService.Lib.Abstractions;
 
-namespace RedisProjects.RedisService.CustomRedisService.Extensions
+namespace RedisProjects.RedisService.CustomRedisService.Lib.Extensions;
+
+public static class RedisExtensions
 {
-    public static class RedisExtensions
+
+ 
+    public static IServiceCollection AddRedisService(this IServiceCollection services, string connectionString)
     {
 
-     
-        public static IServiceCollection AddRedisService(this IServiceCollection services, string connectionString)
-        {
 
+        services.AddSingleton(x => new RedisContext(connectionString));
 
-            services.AddSingleton(x => new RedisContext(connectionString));
+        services.AddScoped<IRedisService, services.RedisService>();
 
-            services.AddScoped<IRedisService, services.RedisService>();
-
-            return services;
-        }
-
-
+        return services;
     }
-
 
 
 }

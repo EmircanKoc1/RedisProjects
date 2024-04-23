@@ -1,4 +1,4 @@
-﻿namespace RedisProjects.RedisService.CustomRedisService.Services
+﻿namespace RedisProjects.RedisService.CustomRedisService.Lib.Abstractions
 {
     public interface IRedisService
     {
