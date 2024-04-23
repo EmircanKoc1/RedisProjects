@@ -77,13 +77,52 @@ namespace RedisProjects.RedisClient.CustomRedisClient.Services
 
         public void ListLeftPush(string key, string value)
         {
-            _database.ListLeftPush(key,value);
+            _database.ListLeftPush(key, value);
         }
         public void ListRightPush(string key, string value)
         {
             _database.ListRightPush(key, value);
         }
 
+        public bool ListInsertAfter(string key, string pivot, string value)
+        {
+            var result = _database.ListInsertAfter(
+                key: key,
+                pivot: pivot,
+                value: value);
+
+            return result is not -1;
+        }
+        public bool ListInsertBefore(string key, string pivot, string value)
+        {
+            var result = _database.ListInsertBefore(
+                 key: key,
+                 pivot: pivot,
+                 value: value);
+
+            return result is not -1;
+
+        }
+
+        public IEnumerable<string> GetList(string key, int startIndex = 0, int lastIndex = -1)
+        {
+            var values = _database.ListRange(
+                key: key,
+                start: startIndex,
+                stop: lastIndex);
+
+
+
+            return values.Select(x => x.ToString());
+
+        }
+
+        public bool RemoveValueFromList(string key, string value)
+        {
+            var result = _database.ListRemove(key, value);
+
+            return result > 0;
+        }
 
 
         public bool RemoveKey(string key)

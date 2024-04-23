@@ -43,11 +43,10 @@ namespace RedisProjects.RedisClient.CustomRedisClient.Controllers
         [HttpPut]
         public IActionResult StringDecrement(string key, long value)
         {
-
-
             return Ok(_redisService.DecrString(key, value));
         }
 
+      
     }
 
 }
