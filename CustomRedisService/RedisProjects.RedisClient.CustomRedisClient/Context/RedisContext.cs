@@ -1,6 +1,6 @@
 ﻿using StackExchange.Redis;
 
-namespace RedisProjects.RedisClient.CustomRedisClient.Context
+namespace RedisProjects.RedisService.CustomRedisService.Context
 {
     public class RedisContext
     {
@@ -17,7 +17,7 @@ namespace RedisProjects.RedisClient.CustomRedisClient.Context
         public IDatabase GetDatabase()
             => _multiplexer.GetDatabase();
 
-        
+
 
     }
 }

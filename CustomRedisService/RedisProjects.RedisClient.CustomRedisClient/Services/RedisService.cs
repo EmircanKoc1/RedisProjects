@@ -1,7 +1,7 @@
-﻿using RedisProjects.RedisClient.CustomRedisClient.Context;
+﻿using RedisProjects.RedisService.CustomRedisService.Context;
 using StackExchange.Redis;
 
-namespace RedisProjects.RedisClient.CustomRedisClient.Services
+namespace RedisProjects.RedisService.CustomRedisService.Services
 {
     public class RedisService : IRedisService
     {
@@ -67,7 +67,7 @@ namespace RedisProjects.RedisClient.CustomRedisClient.Services
         private bool IsValueNumber(string value)
         {
 
-            if (Int64.TryParse(value, out var v))
+            if (long.TryParse(value, out var v))
                 return true;
 
             return false;
@@ -123,6 +123,21 @@ namespace RedisProjects.RedisClient.CustomRedisClient.Services
 
             return result > 0;
         }
+
+        public string ListRightPop(string key)
+        {
+            var value = _database.ListRightPop(key);
+
+            return value;
+        }
+
+        public string ListLeftPop(string key)
+        {
+            var value = _database.ListLeftPop(key);
+
+            return value;
+        }
+
 
 
         public bool RemoveKey(string key)

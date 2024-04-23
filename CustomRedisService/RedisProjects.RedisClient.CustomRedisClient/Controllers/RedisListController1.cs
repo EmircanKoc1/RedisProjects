@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RedisProjects.RedisClient.CustomRedisClient.Services;
+using RedisProjects.RedisService.CustomRedisService.Services;
 
-namespace RedisProjects.RedisClient.CustomRedisClient.Controllers
+namespace RedisProjects.RedisService.CustomRedisService.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]

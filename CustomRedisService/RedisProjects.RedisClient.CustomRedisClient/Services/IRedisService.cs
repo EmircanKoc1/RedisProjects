@@ -1,4 +1,4 @@
-﻿namespace RedisProjects.RedisClient.CustomRedisClient.Services
+﻿namespace RedisProjects.RedisService.CustomRedisService.Services
 {
     public interface IRedisService
     {
