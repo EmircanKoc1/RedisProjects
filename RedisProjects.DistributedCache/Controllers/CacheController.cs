@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Caching.Distributed;
 using RedisProjects.DistributedCache.Entities;
 using RedisProjects.DistributedCache.Extensions;
+using System.Text;
 
 namespace RedisProjects.DistributedCache.Controllers
 {
