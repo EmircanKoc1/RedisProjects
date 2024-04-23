@@ -1,31 +1,29 @@
-using RedisProjects.RedisService.CustomRedisService.Context;
-using RedisProjects.RedisService.CustomRedisService.Services;
-using services = RedisProjects.RedisService.CustomRedisService.Services;
-using StackExchange.Redis;
+using Microsoft.Extensions.Configuration;
+using RedisProjects.RedisService.CustomRedisService.Extensions;
 
-namespace RedisProjects.RedisService.CustomRedisService
+namespace RedisProjects.RedisService.CustomRedisService.API
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-
-
-
             var builder = WebApplication.CreateBuilder(args);
+
             
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddSingleton(x => new RedisContext(builder.Configuration.GetConnectionString("Redis")));
+            builder.Services.AddRedisService(builder.Configuration.GetConnectionString("Redis"));
 
-            builder.Services.AddScoped<IRedisService, services.RedisService>();
 
-            //builder.Services.AddScoped<RedisService>(x=> new RedisService(new RedisContext(builder.Configuration.GetConnectionString("Redis"))));
+
 
             var app = builder.Build();
+
+            
+
 
             if (app.Environment.IsDevelopment())
             {

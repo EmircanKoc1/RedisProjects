@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="StackExchange.Redis" Version="2.7.33" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RedisProjects.RedisService.CustomRedisService.Lib\RedisProjects.RedisService.CustomRedisService.Lib.csproj" />
   </ItemGroup>
 
 </Project>
