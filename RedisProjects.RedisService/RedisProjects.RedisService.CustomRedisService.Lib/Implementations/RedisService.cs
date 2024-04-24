@@ -174,8 +174,7 @@ public class RedisService : IRedisService
                     .Where(x => !x.IsNullOrEmpty)
                     .Select(x => x.ToString());
     }
-
-    public IEnumerable<KeyValuePair<string,double>> GetItemsWithScoreFromSortedSet(string key)
+    public IEnumerable<KeyValuePair<string, double>> GetItemsWithScoreFromSortedSet(string key)
     {
 
         var values = _database.SortedSetRandomMembersWithScores(
@@ -185,6 +184,9 @@ public class RedisService : IRedisService
         return values.ToDictionary(x => x.Element.ToString(), x => x.Score);
 
     }
+
+
+
 
     public bool AddItemToSet(string key, string value)
     {
@@ -214,8 +216,85 @@ public class RedisService : IRedisService
 
 
 
+    public bool HashSet(string key, string fieldName, string fieldValue)
+    {
+        var added = _database.HashSet(
+               key: key,
+               hashField: fieldName,
+               value: fieldValue);
+
+        return added;
+    }
+
+    public KeyValuePair<string, string> HashGetByFieldWithValue(string key, string fieldName)
+    {
+        var value = _database.HashGet(key, fieldName);
+
+        return KeyValuePair.Create<string, string>(fieldName, value.ToString());
+    }
+
+    public bool HashDeleteByFieldName(string key, string fieldName)
+    {
+        var isDeleted = _database.HashDelete(
+            key: key,
+            hashField: fieldName);
+
+        return isDeleted;
+    }
+
+    public IEnumerable<KeyValuePair<string, string>>? GetHashAllFieldsWithValues(string key)
+    {
+        Func<HashEntry[], bool> validator1 = (entries) =>
+        {
+            if (entries is null)
+                return false;
+
+            return true;
+        };
+
+        Func<HashEntry[], bool> validator2 = (entries) =>
+        {
+            if (entries.Length <= 0)
+                return false;
+
+            return true;
+        };
+
+        IEnumerable<KeyValuePair<string, string>>? GetHashAllFields(
+            string key,
+            params Func<HashEntry[], bool>[] validators)
+        {
+
+            var hashEntries = _database.HashGetAll(key);
+
+            foreach (var validator in validators)
+                if (!validator(hashEntries))
+                    return null;
+
+            var validEntries = hashEntries
+                .Where(x => !x.Value.IsNullOrEmpty || !x.Name.IsNullOrEmpty)
+                .Select(x => KeyValuePair.Create<string, string>(
+                    key: x.Name.ToString(),
+                    value: x.Value.ToString()));
+
+            return validEntries;
+        }
 
 
+        return GetHashAllFields(
+            key: key,
+            validators: new Func<HashEntry[], bool>[] { validator1, validator2 });
+    }
+
+    public IEnumerable<string> GetHashAllFieldNamesByKey(string key)
+    {
+        var values = _database.HashKeys(key)
+            .Where(x => !x.IsNullOrEmpty)
+            .Select(x => x.ToString());
+
+        return values;
+
+    }
 
 
 
