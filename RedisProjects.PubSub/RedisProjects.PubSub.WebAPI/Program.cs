@@ -1,6 +1,4 @@
-using RedisProjects.PubSub.Lib.Implementations;
-using RedisProjects.PubSub.Lib.Implementations.Context;
-using RedisProjects.PubSub.Lib.Interfaces;
+using RedisProjects.PubSub.Lib;
 
 namespace RedisProjects.PubSub.WebAPI
 {
@@ -17,9 +15,7 @@ namespace RedisProjects.PubSub.WebAPI
 
 
 
-            builder.Services.AddSingleton<IRedisContext, RedisContext>(x => new RedisContext("localhost:6380"));
-
-            builder.Services.AddSingleton<IMessager, Messager>();
+            builder.Services.AddRedisMessageService(builder.Configuration.GetConnectionString("Redis"));
 
 
 
