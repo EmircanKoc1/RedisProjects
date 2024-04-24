@@ -17,7 +17,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisProjects.RedisService.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisProjects.RedisService.CustomRedisService.Lib", "RedisProjects.RedisService\RedisProjects.RedisService.CustomRedisService.Lib\RedisProjects.RedisService.CustomRedisService.Lib.csproj", "{91068FC1-BD4D-4299-ADD7-F8E6D89CE106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProjects.AdvancedCache.API", "RedisProjects.AdvancedCache\RedisProjects.AdvancedCache.API\RedisProjects.AdvancedCache.API.csproj", "{A8329251-C196-41C6-A7C5-A1EB0D54F617}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RedisProjects.AdvancedCache.API", "RedisProjects.AdvancedCache\RedisProjects.AdvancedCache.API\RedisProjects.AdvancedCache.API.csproj", "{A8329251-C196-41C6-A7C5-A1EB0D54F617}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RedisProjects.PubSub", "RedisProjects.PubSub", "{E202516E-2B09-4F88-8486-82F3E45CFB80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProjects.PubSub.Console", "RedisProjects.PubSub\RedisProjects.PubSub.Console\RedisProjects.PubSub.Console.csproj", "{CF6BD907-12A2-44A1-B49F-A2320A090C40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProjects.PubSub.Lib", "RedisProjects.PubSub\RedisProjects.PubSub.Lib\RedisProjects.PubSub.Lib.csproj", "{CC6D5AC0-E777-4A0C-8B33-7D1E838A0DFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisProjects.PubSub.WebAPI", "RedisProjects.PubSub\RedisProjects.PubSub.WebAPI\RedisProjects.PubSub.WebAPI.csproj", "{87307AFE-20AC-46BE-8039-634338DE21E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +53,18 @@ Global
 		{A8329251-C196-41C6-A7C5-A1EB0D54F617}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8329251-C196-41C6-A7C5-A1EB0D54F617}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8329251-C196-41C6-A7C5-A1EB0D54F617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF6BD907-12A2-44A1-B49F-A2320A090C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF6BD907-12A2-44A1-B49F-A2320A090C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF6BD907-12A2-44A1-B49F-A2320A090C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF6BD907-12A2-44A1-B49F-A2320A090C40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC6D5AC0-E777-4A0C-8B33-7D1E838A0DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC6D5AC0-E777-4A0C-8B33-7D1E838A0DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC6D5AC0-E777-4A0C-8B33-7D1E838A0DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC6D5AC0-E777-4A0C-8B33-7D1E838A0DFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87307AFE-20AC-46BE-8039-634338DE21E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87307AFE-20AC-46BE-8039-634338DE21E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87307AFE-20AC-46BE-8039-634338DE21E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87307AFE-20AC-46BE-8039-634338DE21E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +75,9 @@ Global
 		{38070C60-63BE-4DE4-BE89-57DE008D484A} = {911D5840-1197-4C44-AB4E-B023CE9D94CD}
 		{91068FC1-BD4D-4299-ADD7-F8E6D89CE106} = {911D5840-1197-4C44-AB4E-B023CE9D94CD}
 		{A8329251-C196-41C6-A7C5-A1EB0D54F617} = {1DF02607-313D-49A2-AE53-9584D207622B}
+		{CF6BD907-12A2-44A1-B49F-A2320A090C40} = {E202516E-2B09-4F88-8486-82F3E45CFB80}
+		{CC6D5AC0-E777-4A0C-8B33-7D1E838A0DFE} = {E202516E-2B09-4F88-8486-82F3E45CFB80}
+		{87307AFE-20AC-46BE-8039-634338DE21E3} = {E202516E-2B09-4F88-8486-82F3E45CFB80}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2BE9508-0C4E-4074-8D0D-4FA48AE652FA}
